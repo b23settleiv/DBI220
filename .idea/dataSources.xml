@@ -15,7 +15,7 @@
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="@localhost [3]" uuid="ffbdfb98-4e2d-449e-8c95-c79905771477">
+    <data-source source="LOCAL" name="@localhost [3]" uuid="c3f7a466-3d48-480e-aea6-4521750ab9e3">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
