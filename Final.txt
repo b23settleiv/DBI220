@@ -1,0 +1,52 @@
+CREATE DATABASE Movie_Company;
+USE Movie_Company;
+
+create table movies(
+    id INT NOT NULL AUTO_INCREMENT,
+    title varchar(20),
+    release_year varchar(30),
+    genre varchar (20),
+    PRIMARY KEY (id)
+);
+
+create table Directors(
+    id INT NOT NULL AUTO_INCREMENT,
+    first_name varchar (20),
+    last_name varhcar(20),
+    movies_directed varchar(20),
+    FOREIGN KEY (movies_directed) REFERENCES movies(title),
+    PRIMARY KEY (id)
+);
+
+create table actors(
+    id INT NOT NULL AUTO_INCREMENT,
+    first_name varchar(20),
+    last_name varchar(20),
+    PRIMARY KEY (id)
+);
+
+create table actors_movie(
+    id INT NOT NULL AUTO_INCREMENT,
+    actor_id INT,
+    movie_id INT,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO movies(id, title, release_year, genre) VALUES ('1','stepbrothers','2015','comedy');
+INSERT INTO movies(id, title, release_year, genre) VALUES ('2','The Hobbit','2000','fantasy');
+
+INSERT INTO Directors(id, first_name, last_name, movies_directed) VALUES ('1','quentin','tarantino','Pacific Rim');
+INSERT INTO Directors(id, first_name, last_name, movies_directed) VALUES ('2','steven','speilberg','The Hobbit');
+
+INSERT INTO actors(id, first_name, last_name) VALUES ('1','keanu','reeves');
+INSERT INTO actors(id, first_name, last_name) VALUES ('2','bob','saget');
+
+INSERT INTO actors_movie(id, actor_id, movie_id) VALUES ('1','2','1');
+INSERT INTO actors_movie(id, actor_id, movie_id) VALUES ('2','1','2');
+
+
+
+
+
+
+
