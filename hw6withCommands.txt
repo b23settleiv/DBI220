@@ -1,0 +1,43 @@
+CREATE DATABASE store;
+USE store;
+
+CREATE TABLE orders(
+  id INT NOT NULL UNIQUE AUTO_INCREMENT,
+  orderId INT NOT NULL ,
+  userEmail varchar(30),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE products(
+  id INT NOT NULL UNIQUE AUTO_INCREMENT,
+  productId INT NOT NULL ,
+  expirationDate varchar(20),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE product_order_association(
+  id INT NOT NULL UNIQUE AUTO_INCREMENT,
+  productId INT NOT NULL ,
+  orderId INT NOT NULL ,
+  PRIMARY KEY (id)
+);
+
+SELECT * from product_order_association;
+SELECT * from products;
+SELECT * from orders;
+SELECT (orderId, userEmail) from orders;
+SELECT (id, expirationDate) from products;
+SELECT (orderId) from product_order_association;
+
+INSERT INTO orders(id, orderId, userEmail) VALUES ('1','001','stanleyP@gmail.com');
+INSERT INTO orders(id, orderId, userEmail) VALUES ('2','002','bobbyTarantino@gmail.com');
+INSERT INTO orders(id, orderId, userEmail) VALUES ('3','003','tameImpala@gmail.com');
+
+INSERT INTO products(id, productId, expirationDate) VALUES ('1','4456','June 23rd, 2024');
+INSERT INTO products(id, productId, expirationDate) VALUES ('2','8760','April 15th, 2023');
+INSERT INTO products(id, productId, expirationDate) VALUES ('3', '7432','October 18th, 2077');
+
+INSERT INTO product_order_association(id, productId, orderId) VALUES ('1','4456','001');
+INSERT INTO product_order_association(id, productId, orderId) VALUES ('2','7432','003');
+INSERT INTO product_order_association(id, productId, orderId) VALUES ('3','8760','002');
+
